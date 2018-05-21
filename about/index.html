@@ -207,6 +207,15 @@
 </article>
 
 
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = '关于我'
+    }
+</script>
+
 
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
@@ -415,5 +424,27 @@
 <script src="/js/oni.js"></script>
 
 
+
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Sat May 19 2018 09:34:53 GMT+0800'
+      window.commentConfig.owner = '39286890'
+      window.commentConfig.repo = 'comment-repo# 必填项  你的存储评论的repo'
+      window.commentConfig.client_id = 'cb08aff024a8ed4737d6'
+      window.commentConfig.client_secret = '98262de5f51d3f788820d09e820aa5683c57d8c1'
+      window.commentConfig.redirect_uri = ''
+    } else {
+      window.commentConfig = {
+      	id: 'Sat May 19 2018 09:34:53 GMT+0800',
+        owner: '39286890',
+        repo: 'comment-repo# 必填项  你的存储评论的repo',
+        client_id: 'cb08aff024a8ed4737d6',
+        client_secret: '98262de5f51d3f788820d09e820aa5683c57d8c1',
+        redirect_uri: ''
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
 
 </html>

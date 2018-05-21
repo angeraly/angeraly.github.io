@@ -213,7 +213,7 @@
       	var [month, day] = article.date.split('-')
         ''
         ''
-        var defaultPreview = '/imgs/preview/preview4.jpg'
+        var defaultPreview = '/imgs/preview/preview3.jpg'
         var preview = article.preview ? article.preview : defaultPreview
         var path = '/' + article.path
         resultList.append(`<div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
@@ -543,5 +543,27 @@
 <script src="/js/oni.js"></script>
 
 
+
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Fri May 18 2018 19:48:22 GMT+0800'
+      window.commentConfig.owner = '39286890'
+      window.commentConfig.repo = 'comment-repo# 必填项  你的存储评论的repo'
+      window.commentConfig.client_id = 'cb08aff024a8ed4737d6'
+      window.commentConfig.client_secret = '98262de5f51d3f788820d09e820aa5683c57d8c1'
+      window.commentConfig.redirect_uri = ''
+    } else {
+      window.commentConfig = {
+      	id: 'Fri May 18 2018 19:48:22 GMT+0800',
+        owner: '39286890',
+        repo: 'comment-repo# 必填项  你的存储评论的repo',
+        client_id: 'cb08aff024a8ed4737d6',
+        client_secret: '98262de5f51d3f788820d09e820aa5683c57d8c1',
+        redirect_uri: ''
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
 
 </html>
