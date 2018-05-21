@@ -12,7 +12,7 @@
     
     
     
-    <title>标签 | 栀夏</title>
+    <title>Hexo+Github Pages搭建个人网站 | 栀夏</title>
     <link href=”http://yoursite.com“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -134,7 +134,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/tags">
                         <i class="fa fa-tags"></i>标签
                     </a>
@@ -158,21 +158,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
-
-
+                    
 <article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">栀夏</a>
+        >
+        <span>Hexo+Github Pages搭建个人网站</span>
+    </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/index.html">标签</a>
+                <a href="/2018/05/21/Hexo-Github-Pages搭建个人网站/">Hexo+Github Pages搭建个人网站</a>
             </h1>
         </div>
         <div class="tag-article">
+            
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2018-05-19
+                <i class="fa fa-calendar"></i> 2018-05-21
             </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -180,16 +186,58 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/tags/index.html">标签</a>
+                    <a href="/2018/05/21/Hexo-Github-Pages搭建个人网站/">Hexo+Github Pages搭建个人网站</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2018-05-19
+                <i class="fa fa-calendar"></i> 2018-05-21
+            </p>
+            <p>
+                
+                
             </p>
         </center>
     </div>
     <div class="content-article">
-        
+        <p>#####概述<br>前几天在网上看到一个博客主题比较好看，就自己动手搭建了一个，第一次搭建完成大概用了一下午，后来由于更换主题和域名的原因花了两天时间，总的整好花了大概5天时间。如果你要求不高，那么最多一天也能搭建起来。<br> 　　为什么选择hexo和GitHub呢？首先它能快速生成静态网页，简单美观，其次GitHub提供了300m的免费空间。<br>　下面正式开始喽！</p>
+<p>#####搭建博客的基本步骤<br>–安装git<br>–安装node.js<br>–安装hexo<br>–注册GitHub账号</p>
+<p>#####一.安装git和node.js<br>　　安装工具主要是为了又一个运行环境，更好的让我们使用hexo。<br>　　安装git和node.js非常简单，博主在这里就不在赘述了，注意自己的电脑是Windows还是Mac下载对应的安装包，安装就可以了。<br>　　<a href="https://git-scm.com/" target="_blank" rel="noopener">Git安装包下载</a><br>　　<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js安装包下载</a><br>安装完成后我们继续，如果实在不会安装可以找我，有时间一定回。</p>
+<blockquote>
+<p>小白请注意！高手自动忽略一下内容<br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">git入门教程</a></p>
+</blockquote>
+<p>#####二.安装hexo<br>现在我假设你已经正确安装了以上软件，打开git命令板(windows右键可看到),进入文件夹，<br>例如我在桌面创建的文件夹：<br><img src="http://p92sfqerg.bkt.clouddn.com/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A21.png" alt="angeraly"></p>
+<p>下载安装hexo,执行下面语句：</p>
+<pre><code>$ npm install -g hexo-cli
+</code></pre><p>执行下面语句，初始化博客(执行时确保你所在的文件夹路径正确)：</p>
+<pre><code>$ hexo init &lt;floder&gt;
+//folder为你的博客存放的文件夹
+</code></pre><p>打开文件加看一下你的生成目录，例如我的：<br><img src="http://p92sfqerg.bkt.clouddn.com/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A22.png" alt="angeraly"><br>至此你的博客已经初步形成可以在本地运行<br><strong>测试博客</strong>　<br>1.生成一片文章<br>    $ hexo new “测试1”<br>此时会在你的本地目录source/_post生成了一个”测试1.md”的文件，编辑可修改。<br>2.生成一个可执行文件</p>
+<pre><code>$ hexo g
+</code></pre><p>3.启动本地服务器</p>
+<pre><code>$ hexo s
+</code></pre><p>4.默认会在4000端口启动，我们在浏览器输入<a href="http://localhost:4000即可查看，有没有小激动呢！" target="_blank" rel="noopener">http://localhost:4000即可查看，有没有小激动呢！</a></p>
+<p><strong>只有我们自己能看到这怎么行呢？既然玩了就要搞得完美，我么继续，通过下面的操作你的网站别人就能访问了，期待~</strong></p>
+<p>#####三.注册GitHub</p>
+<p>　打开网站<a href="https://github.com/" target="_blank" rel="noopener">git</a>注册就行，这里不多讲。<br>　创建一个仓库，在网站的右上角可以看到<br><img src="http://p92sfqerg.bkt.clouddn.com/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%87%E4%BB%B63.png" alt="angeraly"><br>点击new repository创建一个仓库<br><img src="http://p92sfqerg.bkt.clouddn.com/%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%87%E4%BB%B64.png" alt="angeraly"></p>
+<blockquote>
+<p><strong>注意</strong>仓库的名字要填：你的用户名.github.io<br>description随便填就OK啦！<br>public要选中，底下的initilize this repository with a README选中。<br>点击绿色按钮就可以了<br>由于我们初次创建所以要填写SSH值<br><a href="https://blog.csdn.net/u012373815/article/details/53575362" target="_blank" rel="noopener">详细步骤点击链接</a></p>
+</blockquote>
+<p>#####四.将博客部署到GitHub Pages上<br>找到你的博客根目录，有一个_config.yml文件,用文本编辑器打开，最好不用Windows自带的记事本，具体原因不做解释。找到deploy字段配置如下：</p>
+<blockquote>
+<p>deploy:<br>type: git<br>repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:你的账号名/你的仓库名(例如我的：<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:angeraly/angeraly.github.io)<br>branch: master<br>注意安装一个扩展<br><code>$ npm install hexo-deployer-git --save</code><br>然后执行<br><code>hexo d</code></p>
+</blockquote>
+<p>非常简单就成功了，当然由于第一次部署，或者莫名的原因不成功，那么我们可以直接用git上传<br>下面简单介绍<strong>如果上面已经成功请不要继续看</strong></p>
+<pre><code>$ cd 你的文件夹
+$ hexo g
+$ cd public
+$ git init
+$ git add .
+$ git commit -m &quot;message&quot;
+$ git remote add origin git@github.com:你的账号/你的仓库
+$ git push -u origin master
+</code></pre><p>好哒大功告成，直接浏览器输入你的resporitory，接下来就去看一下你的博客吧！</p>
+<p>#####总结<br>搭建博客的方法很多，有兴趣的可以看一下WordPress搭建博客，后期管理比较方便，以后有时间搞了会出教程。关于域名绑定的问题可以自行百度，以后有时间更新，一下子码完这么多字，累~~~~<br> </p>
+
     </div>
 </article>
 
@@ -199,10 +247,9 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = '标签'
+      window.commentConfig.title = 'Hexo+Github Pages搭建个人网站'
     }
 </script>
-
 
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
@@ -320,13 +367,13 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/tags/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/05/21/Hexo-Github-Pages搭建个人网站/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/tags/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/05/21/Hexo-Github-Pages搭建个人网站/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/tags/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/05/21/Hexo-Github-Pages搭建个人网站/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
@@ -439,7 +486,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sat May 19 2018 17:48:09 GMT+0800'
+      window.commentConfig.id = 'Mon May 21 2018 20:34:12 GMT+0800'
       window.commentConfig.owner = '39286890'
       window.commentConfig.repo = 'comment-repo'
       window.commentConfig.client_id = 'cb08aff024a8ed4737d6'
@@ -447,7 +494,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Sat May 19 2018 17:48:09 GMT+0800',
+      	id: 'Mon May 21 2018 20:34:12 GMT+0800',
         owner: '39286890',
         repo: 'comment-repo',
         client_id: 'cb08aff024a8ed4737d6',
