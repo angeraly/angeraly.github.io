@@ -12,7 +12,7 @@
     
     
     
-    <title>标签 | 栀夏</title>
+    <title>新手如何在Altium Designer中绘制电路板 | 栀夏</title>
     <link href=”http://yoursite.com“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -194,21 +194,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
-
-
+                    
 <article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">栀夏</a>
+        >
+        <span>新手如何在Altium Designer中绘制电路板</span>
+    </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/index.html">标签</a>
+                <a href="/2018/05/30/新手如何在Altium-Designer中绘制电路板/">新手如何在Altium Designer中绘制电路板</a>
             </h1>
         </div>
         <div class="tag-article">
+            
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2018-05-19
+                <i class="fa fa-calendar"></i> 2018-05-30
             </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -216,16 +222,64 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/tags/index.html">标签</a>
+                    <a href="/2018/05/30/新手如何在Altium-Designer中绘制电路板/">新手如何在Altium Designer中绘制电路板</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2018-05-19
+                <i class="fa fa-calendar"></i> 2018-05-30
+            </p>
+            <p>
+                
+                
             </p>
         </center>
     </div>
     <div class="content-article">
-        
+        <blockquote>
+<p>好久没用AD画电路板了，这次电子实训让画个PCB板，借着这个机会写了一篇新手教程。<br>此教程所用的电路图是自动循迹小车，虽然元件比较简单，但是感觉还是很厉害的，一块看一下吧。<br>此教程仅适用于没有基础的同学</p>
+</blockquote>
+<p><strong>一、概述 </strong></p>
+<p>Altium Designer 的功能非常强大，主要用来： <strong>理图设计、 印刷电路板设计、 FPGA的开发、嵌入式开发、3D PCB设计。</strong>这里我们主要用来绘制PCB.</p>
+<p><strong>二、软件的下载与安装</strong></p>
+<p>我用的是AD14.1.5，安装教程可以自己百度，上面的安装版本非常多，安装教程也挺多的。不会的可以参考下面的链接：</p>
+<p><a href="https://jingyan.baidu.com/article/f3e34a12d9b1d3f5eb653524.html" target="_blank" rel="noopener">Altium Designer 安装教程</a></p>
+<p><a href="https://www.altium.com/" target="_blank" rel="noopener">Altium Designer 官网</a></p>
+<p><strong>三、绘制原理图</strong></p>
+<p>安装好软件后就可以开始绘制原理图了，各种版本的操作基本类似，这里以AD14.1.5为例。我们要以循迹小车为例，电路如下<br><img src="http://p92sfqerg.bkt.clouddn.com/%E6%96%B0%E6%89%8B%E7%94%BBpcb%E7%94%B5%E8%B7%AF%E5%9B%BE.jpg" alt="enter image description here"></p>
+<p>我们先来分析一下，传感器1和传感器2同时影响着IC1A和IC1B的同相输入端和反向电压输入端的电压。当传感器1对着黑线时传感器2正好不对着黑线，所以D1的光被黑线吸收反射不到RG1，所以RG1的阻值增大，而D2的光能反射到RG2使RG2的阻值减小。这样使得IC1A的同相输入端的电压升高而反向输入端的电压降低，所以IC1A输出高电平使Q1截止，电机M1不转。IC1B则输出低电平使  Q2导通，电机M2转。所以小车必然转向，结果传感器1离开了黑线，M1开转，小车前行，因行进方向所致传感器2必然到达黑线上，这时电机M2停转，小车则向相反方向转向，这样一来，小车就会沿着黑线行进。</p>
+<p><strong>1.新建工程</strong></p>
+<p>(1)打开软件后点击<strong>File–&gt;New–&gt;Design Workplace</strong>新建工作空间</p>
+<p>(2)点击<strong>File–&gt;New–&gt;Project–&gt;PCB Project</strong>新建了一个工程<br><img src="http://p92sfqerg.bkt.clouddn.com/%E6%96%B0%E6%89%8B%E7%94%BBpcb2.png" alt="enter image description here"></p>
+<p>（3）新建原理图</p>
+<p>操作和刚刚新建工程类似，点击<strong>File–&gt;New–&gt;Schematic</strong>,好啦，现在我们的就可以在面板中绘制原理图啦！</p>
+<p>（4）绘制原理图</p>
+<p>接下来的问题就是绘制我们的电路图了，首先放置元器件，有2种常用的方法：点击图片中的<strong>Place–&gt;Part</strong>或者点击右边的<strong>library</strong>按钮</p>
+<p><img src="http://p92sfqerg.bkt.clouddn.com/%E6%96%B0%E6%89%8B%E7%94%BBpcb3.png" alt="enter image description here"></p>
+<p><strong>注意：绘制时我们可能找不到我们需要的元件，这时就需要自己安装库文件，局文件可以在网上下载也可以自己制作，但是导入方法是一样的，下面讲一下如何安装库文件。</strong></p>
+<p>点击library出现下图，按照步骤就可以啦</p>
+<p><img src="http://p92sfqerg.bkt.clouddn.com/%E6%96%B0%E6%89%8B%E7%94%BBpcb4.png" alt="enter image description here"></p>
+<p>绘制完毕后的电路如下图，<strong>强烈建议新手们可以绘制一个简单一点的，因为不熟悉的话，后面话pcb容易出错，以上步骤都是一样的，我因为电子实训画的就是这个，就懒得再画一个了</strong><br><img src="http://p92sfqerg.bkt.clouddn.com/%E6%96%B0%E6%89%8B%E7%94%BBpcb5.png" alt="enter image description here"></p>
+<p>绘制完毕后要进行规则检查</p>
+<p><img src="http://p92sfqerg.bkt.clouddn.com/%E6%96%B0%E6%89%8B%E7%94%BBpcb6.png" alt="enter image description here"><br>没有提示就说明没有大问题，可以在message里面查看详细信息</p>
+<p>（5）绘制PCB图</p>
+<p>新建pcb文件，这里与新建原理图一样，点击File–&gt;New–&gt;Pcb,接下来的问题就是如何导入原理图了。有两种方法1.从原理图到pcb 2.从pcb到原理图。这里以第二种方法为例，点击Design出现</p>
+<p><img src="http://p92sfqerg.bkt.clouddn.com/%E6%96%B0%E6%89%8B%E7%94%BBpcb7.png" alt="enter image description here"><br>点击确定后出现如下对话框<br><img src="http://p92sfqerg.bkt.clouddn.com/%E6%96%B0%E6%89%8B%E7%94%BBpcb8.png" alt="enter image description here"></p>
+<p>如果没有错误则显示为对号，否则就是有错误，<strong>显示有错误要查看pcb分装了，一般都是这个问题出错</strong></p>
+<p><strong>注意：新手开始画pcb时最容易忽略的就是没有导入封装库，封装库一般软件自带的有常用的，还可以自己下载，导入方法同元件库导入。</strong></p>
+<p>接下来就是布局和连线了</p>
+<p>把元件放置好后，点击<strong>Place–&gt;Interative Routing </strong>后放在元件引脚上就可以连线了，元件的布局和连线有很多规则这里忽略掉，以后的学习中一定要注意，特别是高频和容易干扰的信号，这里不做详细说明。（下图是我们要求的制作的板子，因为要自己热转印画的单层板，所以封装什么的就没注意，自己腐蚀电路板时，线宽要加粗）</p>
+<p><img src="http://p92sfqerg.bkt.clouddn.com/%E6%96%B0%E6%89%8B%E7%94%BBpcb9.png" alt="enter image description here"></p>
+<p>看上面的方框圈住的地方，一般我们画双层板居多，连线时应该注意下面要选择不同的层，绘制前还要先画禁止布线层（Place–&gt;&gt;line画）</p>
+<p>最后再敷铜就可以了</p>
+<p>敷铜过程如下：Place–&gt;Polygon pour,选择你要敷铜的形式就可以了</p>
+<p><img src="http://p92sfqerg.bkt.clouddn.com/%E6%96%B0%E6%89%8B%E7%94%BBpcb10.png" alt="enter image description here"></p>
+<p>到此保存我们的工程就可以了</p>
+<p>四、总结</p>
+<p>文章内容还有不足之处，欢迎指正，我们在导入PCB之前要保存一下，否则可能导入不了，新手练习时尽量用简单的电路图可以避免好多问题。文章所用的电路版权归原作者所有，这里仅作为教程使用。</p>
+<p>本文章仅供学习交流用禁止用作商业用途，文中所有内容均为原创未经授权不得转载</p>
+<p>微信公众号：zhjj0729</p>
+<p>微博：文艺to青年<br> </p>
+
     </div>
 </article>
 
@@ -235,10 +289,9 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = '标签'
+      window.commentConfig.title = '新手如何在Altium Designer中绘制电路板'
     }
 </script>
-
 
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
@@ -380,23 +433,23 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/tags/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/05/30/新手如何在Altium-Designer中绘制电路板/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/tags/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/05/30/新手如何在Altium-Designer中绘制电路板/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/tags/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/05/30/新手如何在Altium-Designer中绘制电路板/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/二次元/" style="font-size: 18.266364109956573px;" class="tag-cloud-link">二次元</a>
+    <a href="/tags/二次元/" style="font-size: 10.5851761477299px;" class="tag-cloud-link">二次元</a>
     
-    <a href="/tags/编程/" style="font-size: 8.733486138625285px;" class="tag-cloud-link">编程</a>
+    <a href="/tags/编程/" style="font-size: 17.206734907737413px;" class="tag-cloud-link">编程</a>
     
-    <a href="/tags/励志/" style="font-size: 11.922596717717417px;" class="tag-cloud-link">励志</a>
+    <a href="/tags/励志/" style="font-size: 11.099739251021667px;" class="tag-cloud-link">励志</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -505,7 +558,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sat May 19 2018 17:48:09 GMT+0800'
+      window.commentConfig.id = 'Wed May 30 2018 22:05:25 GMT+0800'
       window.commentConfig.owner = '39286890'
       window.commentConfig.repo = 'comment-repo'
       window.commentConfig.client_id = 'cb08aff024a8ed4737d6'
@@ -513,7 +566,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Sat May 19 2018 17:48:09 GMT+0800',
+      	id: 'Wed May 30 2018 22:05:25 GMT+0800',
         owner: '39286890',
         repo: 'comment-repo',
         client_id: 'cb08aff024a8ed4737d6',
